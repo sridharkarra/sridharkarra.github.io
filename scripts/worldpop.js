@@ -36,7 +36,7 @@
                 for (var i = 0; i < list.countries.length; i++) {
                     console.log(list.countries[i])
                    // $("#output-pop-world").append("<h3>" + countryname[0].toUpperCase() + countryname.slice(1).toLowerCase() + "</h3>")
-                    $.ajax("http://api.population.io:80/1.0/population/" + list.countries[i] + "/today-and-tomorrow/")
+                    $.ajax("https://api.population.io:80/1.0/population/" + list.countries[i] + "/today-and-tomorrow/")
                         .done(function(data) {
                             $("#output-pop-world").append("<h3>" + list.countries[i] + "=" + data.total_population[0].population + "</h3>");
 
@@ -57,7 +57,7 @@
         var searchCountry = $("#countryPop").val() || value;
         searchCountry = searchCountry[0].toUpperCase() + searchCountry.slice(1).toLowerCase();
 
-        $.ajax("http://api.population.io:80/1.0/population/" + searchCountry + "/today-and-tomorrow/")
+        $.ajax("https://api.population.io:80/1.0/population/" + searchCountry + "/today-and-tomorrow/")
             .done(function(list) { //[0]
                 $("#output-pop").append("<h3>Population of " +  searchCountry+ " is: " + list.total_population[0].population  + "</h3>");
 
@@ -95,7 +95,7 @@
                     });
                 }
                 else{
-                $.ajax("http://api.population.io:80/1.0/population/" + searchYear + "/" + searchCountry+"/")
+                $.ajax("https://api.population.io:80/1.0/population/" + searchYear + "/" + searchCountry+"/")
                     .done(function(list) { //[0]
                         console.log(list, list.length);
                         for (var i = 0; i < list.length; i++) {
