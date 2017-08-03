@@ -1,0 +1,37 @@
+<!-- Number Guess Game//
+Name : Sridhar Karra
+Date : 01/20/2015
+-->
+
+<head>
+    <script type="text/javascript" src="scripts/number-guess.js" defer></script>
+</head>
+
+
+<div id="numguess">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <div class="ng-header">Number Guessing Game</div>
+    <label class="ng-label"> How many attempts do you need: <input type='text' id="max_tries" size="1"></label>
+    <label class="ng-label"> Enter any number below 100: <input type='text' size="1" id="guess"></label>
+    <label class="ng-label"> Number of attempts left : <input type='text' id="tries" size="1" disabled></label>
+
+    <button type="button" class="btn btn-primary" id="checkBtn">Check</button>
+    <button type="button" class="btn btn-warning" id="resetBtn" data-toggle="collapse" data-target="#lost"
+            style="visibility:hidden">Try Again
+    </button>
+    <button type="button" class="btn btn-info" id="playBtn" data-toggle="collapse" data-target="#win"
+            style="visibility:hidden">Play Again
+    </button>
+    <div id="lost" class="collapse" style="color:darkblue">
+        Better luck next time. Click "Try Again"
+    </div>
+    <div id="win" class="collapse" style="color:darkblue">
+        Congratulations. You Win. Click "Play Again"
+    </div>
+</div>
+
+
+
+
+
+

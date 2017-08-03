@@ -1,0 +1,143 @@
+<!-- Home Page//
+Name : Sridhar Karra
+Date : 01/20/2015
+-->
+
+<!--
+
+https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-and-a-touch-of-javascript--cms-26528
+
+https://tympanus.net/codrops/2013/02/06/interactive-infographic-with-svg-and-css-animations/
+
+-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My WebSite</title>
+    <link rel="stylesheet" href="https:/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel+Decorative|Montserrat+Alternates"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="scripts/number-guess.js" defer></script>
+    <script type="text/javascript" src="scripts/calculator_browser.js" defer></script>
+    <script type="text/javascript" src="scripts/calculator.js" defer></script>
+    <script type="text/javascript" src="scripts/get-movies.js" defer></script>
+    <script type="text/javascript" src="scripts/get-places.js" defer></script>
+    <script type="text/javascript" src="scripts/ant_frog.js" defer></script>
+    <script type="text/javascript" src="scripts/worldpop.js" defer></script>
+</head>
+
+<body onload="startTime()" data-spy="scroll" data-target=".navbar" data-offset="100">
+<nav class="navbar navbar-inverse navbar-fixed-top affix-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topmenu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#about">Sridhar Karra</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="topmenu">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></a></li>-->
+                <li><a href="#profile">Profile</a></li>
+                <li class="dropdown">
+                    <a href="#projects" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#favmovies">Favourite Movies</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#numberguess">Number Guess</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#worldPop">World Population</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div id="main">
+
+    <div ng-view></div>
+
+</div>
+
+<footer>
+    <div class="footer navbar-inverse navbar-fixed-bottom" id="footer-below">
+        <a href="https://www.facebook.com/catchsrikarra" target="_blank" class="fa fa-facebook-square"
+           aria-hidden="true"></a>
+        <a href="https://sridharkarra.github.io/mysite.html" target="_blank" class="fa fa-github-square"
+           aria-hidden="true"></a>
+        <a href="https://www.linkedin.com/in/karrasridhar/" target="_blank" class="fa fa-linkedin-square"
+           aria-hidden="true"></a>
+        <p>Developed by Sridhar Karra</p>
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        . All Rights Reserved
+    </div>
+
+</footer>
+
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when("/profile", {
+                templateUrl: "pages/profile.html"
+            })
+            .when("/projects", {
+                templateUrl: "pages/projects.html"
+            })
+            .when("/calculator", {
+                templateUrl: "pages/calculator.html"
+            })
+            .when("/numberguess", {
+                templateUrl: "pages/numberguess.html"
+            })
+            .when("/favmovies", {
+                templateUrl: "pages/favmovies.html"
+            })
+            .when("/contact", {
+                templateUrl: "pages/contact.html"
+            })
+            .when("/worldPop", {
+                templateUrl: "pages/worldpop.html"
+            })
+            .otherwise({
+                templateUrl: "pages/aboutme.html"
+            })
+    }]);
+</script>
+
+<!--<script>-->
+    <!--function startTime() {-->
+        <!--var strcount-->
+        <!--var x = new Date()-->
+        <!--var x1=x.toLocaleString()-->
+        <!--document.getElementById('txt').innerHTML = x1;-->
+        <!--var t = setTimeout(startTime, 500);-->
+    <!--}-->
+
+    <!--function checkTime(i) {-->
+        <!--if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10-->
+        <!--return i;-->
+    <!--}-->
+
+<!--</script>-->
+</body>
+</html>
